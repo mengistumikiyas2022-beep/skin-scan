@@ -3,11 +3,7 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # Install system dependencies for OpenCV and MediaPipe
-RUN apt-get update && apt-get install -y \
-    libgl1 \
-    libglx-mesa0 \
-    libglib2.0-0 \
-    && rm -rf /var/lib/apt/apt-lists/*
+RUN apt-get update && apt-get install -y libgl1 libglx-mesa0 libglib2.0-0 && rm -rf /var/lib/apt/apt-lists/*
 
 # Copy dependency files
 COPY pyproject.toml ./
